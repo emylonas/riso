@@ -21,7 +21,7 @@ $header = '
     window.rscData = JSON.parse(rscData);
   }
   </script>
-  <script src="https://script.google.com/macros/s/AKfycbzn4ZtK67spxPUzEScRq9IvyVwupE7ECjepmBzwYmj_UJd5YzQ/exec"></script>';
+  <script src="https://script.google.com/macros/s/AKfycbysSW4_qjnyjvVsuNsJGvaaZIQsdtzVdPhxZ_kMzKFtttwj-hKx/exec"></script';
 require_once("../dependencies/functions.php");
 getHeader($header,'Research the Panorama', 'scene');?>
   <!-- Begin #container -->
@@ -111,4 +111,5 @@ getHeader($header,'Research the Panorama', 'scene');?>
 	
 	</script>-->
   <!-- Don't use the php footer() function here, it adds markup we dont want. -->
+  <!-- old google script URL script src="https://script.google.com/macros/s/AKfycbzn4ZtK67spxPUzEScRq9IvyVwupE7ECjepmBzwYmj_UJd5YzQ/exec"  /script -->
 </body></html>

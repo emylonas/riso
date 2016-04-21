@@ -486,6 +486,10 @@ getHeader($css,"Behind the Scenes")?>
                                         ><h3>Associates</h3></th>
                             </tr>
                         </thead>
+<tr>
+                            <td>Valeria Federici</td>
+                            <td>Italian Studies, Brown University</td>
+                        </tr>
                         <tr>
                             <td>Nicole Gercke</td>
                             <td>Italian Studies, Brown University</td>

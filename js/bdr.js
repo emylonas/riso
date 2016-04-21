@@ -75,22 +75,17 @@ BDR.prototype._getMod = function(metalink){
     var style="";
     switch(this._settings.modType){
       case 'search':
-        style = 'http://library.brown.edu/cds/garibaldi/resources/search-metadata.xsl';
+        style = 'https://library.brown.edu/cds/garibaldi/resources/search-metadata.xsl';
         break;
       case 'generic':
-        style = 'http://library.brown.edu/cds/garibaldi/resources/generic-metadata.xsl';
+        style = 'https://library.brown.edu/cds/garibaldi/resources/generic-metadata.xsl';
         break;
       default:
         throw new Exception("The modType option must be one of 'search' or 'generic'");
         return false;
     }
     $.ajax({
-      url: 'http://repository.library.brown.edu:8081/saxon_processor/v2/transform',
-      data: {
-        source: 'http://repository.library.brown.edu/services/getMods/'+metalink.attr('data-pid')+'/mods.xml',
-        style: style,
-        'clear-stylesheet-cache': 'yes'
-      },
+      url: 'https://library.brown.edu/xsl_transformer/v1/?xml_url=https://repository.library.brown.edu/studio/item/'+metalink.attr('data-pid')+'/MODS/'+'&xsl_url='+style+'&auth_key=whitelist',
       type: 'GET',
       dataType: "jsonp",
       jsonpCallback:"metacallback",

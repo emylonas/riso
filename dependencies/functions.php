@@ -56,8 +56,8 @@ function getNavigation( $breadcrumbs ) {
 	<div class="navbar">
 		<div class="navbar-inner">
 			<div class="container">
-				<div class="brand span3" href="#">
-					<a href="'.$baseurl.'" title="Home"><span style="font-family: \'Libre Baskerville\', serif;color:#000;">Garibaldi &amp; the Risorgimento</span></a>
+				<div class="brand span3" style=" width:350px;padding-left:2px; padding-top: 8px; " href="#" >
+					<a href="'.$baseurl.'" title="Home"><img src="'.$baseurl.'img/Main_logo_left.png"/></a>
 				</div>
 				<ul class="nav main-nav">
 					<li style="list-style: none">' .$currnav.'
