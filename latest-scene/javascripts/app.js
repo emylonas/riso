@@ -387,76 +387,17 @@ function sanitize(str){
     return ""
   return unescape(String(str).replace(/%22/gi,"'"));
 }
+    
+
 
 function loadResources(e, sceneIndex){
-  var resources = ""
-    , sceneRscs = $.map(rscData.scenes, function(e,i){if(e.id == sceneIndex) return e; else return null;});
-  if(sceneRscs.length == 0){
-    resources = "No resources found.";
-  }else{
-    sceneRscs = sceneRscs[0]; //necessary cause $.map returns an array 
-    $.each(sceneRscs.categories, function(i, category){
-      resources += '<div class="row-fluid">';
-      resources += '	<div class="row-fluid"><p><span class="badge">'+decodeURIComponent(category.name)+'</span></p</div>';
-			resources += '	<div class="row-fluid">';
-      $.each(category.resources, function(j, rsc){
-        rsc.type = rsc.type.toLowerCase();
-        
-        // To modify, add more cases for the switch and more variables for formating raw values
-        var displayImg = "", readMore = "";
-        
-        switch(decodeURIComponent(rsc.type)){
-          case 'audio':
-            displayImg = 'images/icons/audio.png';
-            break;
-          case 'video':
-            displayImg = 'images/icons/video.png';
-            break;
-          case 'word doc':
-            displayImg = 'images/icons/doc.png';
-            readMore = '<span class="glyph general-enclosed">u</span> Read More</a></p>';
-            break;
-          case 'pdf':
-            displayImg = 'images/icons/pdf.png';
-            readMore = '<span class="glyph general-enclosed">u</span> Read More</a></p>';
-            break;
-          case 'google book':
-            displayImg = 'images/icons/books.png';
-            readMore = '<span class="glyph general-enclosed">u</span> Read More</a></p>';
-            break;
-          case 'webpage':
-            displayImg = 'image/icons/web.png';
-            readMore = '<span class="glyph general-enclosed">u</span> Read More</a></p>';
-            break;
-          case 'image':
-            readMore = '<span class="glyph general-enclosed">d</span> View larger</a></p>';
-            displayImg = 'images/icons/image.png';
-            break;
-          default:
-            readMore = '<span class="glyph general-enclosed">u</span> Read More</a></p>';
-            displayImg = 'images/icons/default.png';
-        }  
-        
-        if(rsc.thumbnail){
-          displayImg = decodeURIComponent(rsc.thumbnail);
-        }      
-        
-        resources += '<div class="span4 media"><a target="_blank" href="'+decodeURIComponent(rsc.url)+'" class="pull-left"><img src="'
-        +displayImg+'" alt="'
-        +sanitize(rsc.gloss)+'" title="'
-        +sanitize(rsc.title)+'" class="media-object" data-src="holder.js/86x125"></a><div class="media-body"><h6 class="media-heading">'
-        +(rsc.title ? sanitize(rsc.title) : "(No title)")+'</h6><p class="gloss">'
-        +sanitize(rsc.gloss)+'<a target="_blank" href="'
-        +decodeURIComponent(rsc.url)+'">'
-        +readMore+'</div></div>';
-      });
-      resources +='</div></div>';
-    });
-  }
-  $("#resources").siblings(".preloader").remove();
-  $("#resources").html(resources).fadeIn();
-  $(window).trigger('resourcesloaded')
-  }
+    // unclick all the buttons and click the one corresponding to selected scene
+    $("#clear-filters-button").trigger("click");
+    currClickedButton = $("#"+sceneIndex);
+    currClickedButton.trigger("click");
+
+
+}
 
 function saveState(specificState){
   var state = {

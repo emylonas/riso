@@ -1,0 +1,20 @@
+
+
+.map-facet {
+  height: 377px;
+}
+
+.map-facet .brush rect.extent {
+  fill: steelblue;
+  fill-opacity: .125;
+}
+
+.map-facet .brush .resize path {
+  fill: #eee;
+  stroke: #666;
+}
+
+.map-facet .brush .extent {
+  stroke-width: 1;
+  stroke: rgba(255, 255, 255, 100);
+}

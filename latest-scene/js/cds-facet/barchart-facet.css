@@ -1,0 +1,43 @@
+
+.barchart-facet .axis .tick line {
+  opacity: 0.2;
+}
+
+.barchart-facet .axis .domain {
+  display: none;
+}
+
+.barchart-facet .background.bar {
+  fill: #ccc;
+}
+
+.barchart-facet .foreground.bar {
+  fill: steelblue;
+}
+
+.barchart-facet .axis path,
+.barchart-facet .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.barchart-facet .axis text {
+  font: 10px sans-serif;
+}
+
+.barchart-facet .brush rect.extent {
+  fill: steelblue;
+  fill-opacity: .125;
+}
+
+.barchart-facet .brush .resize path {
+  fill: #eee;
+  stroke: #666;
+}
+
+.barchart-facet .brush .extent {
+  stroke-width: 1;
+  stroke: rgba(255, 255, 255, 100);
+}
+

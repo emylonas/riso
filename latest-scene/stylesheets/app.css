@@ -102,7 +102,7 @@ transform: rotate(-90deg);
 color: white;
 content: 'Side 2';
 display: inline-block;
-width: 68px;
+width: 68pxe
 text-align: center;
 height: 22px;
 margin-left: -44px;
@@ -286,7 +286,7 @@ max-width: 400px;
 /* Height of these are reset using javascript on resize in app.js*/
 #script-text, #pages, #resources{
   height: 100%;
-  overflow: auto;
+  overflow: scroll;
 }
 
 #script-container .nav{
@@ -357,7 +357,41 @@ max-width: 400px;
 #resources .gloss a{
 	display: block;
 }
+#resources-only {
+    overflow:scroll;
+}
 
+.row {
+    margin-left:0;
+}
+
+/*These two need to be wide enough for the resources explorer iframe*/
+#resources {
+    width:1500px;
+}
+
+#resources-container {
+    width:1500px;
+}
+
+#resources-row {
+    width:1500px;
+}
+
+#wrapper {
+    margin:0px;
+}
+
+#charts {
+    width:600px;
+    padding-right:100px;
+    float:left;
+}
+
+#results-list {
+    float:left;
+    width:750px;
+}
 #resources img.media-object{
   width: 86px; /* This is kind of a fix. bootstrap should fix the sizes based on the data-src attribute, but it doesn't always */
 }
